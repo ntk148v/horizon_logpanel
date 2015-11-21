@@ -51,4 +51,8 @@ class ShowLogView(forms.ModalFormView):
         context['log_file_name'] = log_file_name
         context['log_file_path'] = log_file_path
         context['log_file_content'] = log_file_content
+        log_file_content_html = ""
+        for log_line in log_file_content
+            log_file_content_html = log_file_content_html + "<p>" + log_line + "</p>"
+        context['log_file_content_html'] = log_file_content_html
         return context
