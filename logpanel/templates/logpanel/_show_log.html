@@ -1,0 +1,12 @@
+{% extends "horizon/common/_modal.html" %}
+{% load i18n %}
+{% block modal-body %}
+	<h3>{% trans "Description:" %}</h3>
+	<p>{% trans "Show logging content here." %}</p>
+	<hr>
+	<h4>{{ log_file_name }}</h4>
+	{% for log_line in log_file_content %}
+		<p>{{ log_line }}</p>
+	{% endfor %}
+	<hr>
+{% endblock %}

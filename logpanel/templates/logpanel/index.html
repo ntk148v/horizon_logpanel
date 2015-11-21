@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Log Panel" %}{% endblock %}
+{% block page_header %}
+	{% include "horizon/common/_page_header.html" with title=_("Log Panel") %}
+{% endblock page_header %}
+{% block js %}
+	{% include "horizon/_scripts.html" %}
+	<script src='{{ STATIC_URL }}charjs/Chart.js' type='text/javascript' charset='utf-8'></script>
+	<script src='{{ STATIC_URL }}mydashboard/js/mydashboard.js' type='text/javascript' charset='utf-8'></script>
+{% endblock %}
+{% block main %}
+	<!-- <hr>
+	<h4>Nova Compute Log </h4>
+	<hr>
+	{% for log_line in log_file_content %}
+					<p>{{ log_line }}</p>
+	{% endfor %}
+	<hr> -->
+	<h1>Test day nay</h1>
+	<div style="width: 50%">
+		<canvas id="canvas" height="450" width="600"></canvas>
+	</div>
+{% endblock %}
