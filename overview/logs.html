@@ -1,0 +1,6 @@
+{% load i18n %}
+{% block main %}
+	{% for log_line in log_file_content %}
+		<p>{{ log_line }}</p>
+	{% endfor %}
+{% endblock %}
