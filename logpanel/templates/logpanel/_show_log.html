@@ -1,22 +1,6 @@
 {% extends "horizon/common/_modal.html" %}
 {% load i18n %}
 {% block modal-body %}
-			<script type="text/javascript">
-            $(document).ready(function(){
-            function loadLogs() {
-                $.ajax({
-                    //type: "post", 
-                    //url: "{{url('get_new_post')}}", 
-                    cache: false, success: function(){
-                       $("#logs").html({% log_file_content_html %});//
-                    }
-                    });
-                return false;
-            }
-            setInterval(function() {loadLogs();}, 1000);
-            });
-
-            </script>
 	<h3>{% trans "Description:" %}</h3>
 	<p>{% trans "Show logging content here." %}</p>
 	<hr>

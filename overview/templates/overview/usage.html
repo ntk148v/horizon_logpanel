@@ -28,7 +28,7 @@
 		    url: "http://192.168.100.11/horizon/mydashboard/about/",
 		    cache: false,
                     success: function(data){
-                     	$("#logs").append(data);
+                     	$("#logs").html(data);
 		    }
                     });
                 return false;

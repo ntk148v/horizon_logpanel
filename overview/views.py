@@ -87,10 +87,10 @@ class AboutView(View):
     
     def get(self, request, **kwargs):
         log_file_path = "/var/log/nova/nova-compute.log"
-        #log_file_content = process = Popen(
-        #   shlex.split("cat " + log_file_path), stdout=PIPE, stderr=PIPE)
-        #stdout, stderr = process.communicate()
-        #log_file_content = stdout.splitlines()
-	log_file_content = ['Dang', 'Van', 'Dai']
+        log_file_content = process = Popen(
+            shlex.split("tail -n 10 " + log_file_path), stdout=PIPE, stderr=PIPE)
+        stdout, stderr = process.communicate()
+        log_file_content = stdout.splitlines()
+	#log_file_content = ['Dang Van Dai zxncmzbnxcbznbxmcbzmxbcnzxcmzxbcmzbxmbzmxbcmzbxncbmm zmxcbzmxbcm bzxncbzmxc', 'Dai == asjdhakjsd asdkja hskdak ajs dhaksd']
         return render(request, self.template_name, {'log_file_content': log_file_content})
 
